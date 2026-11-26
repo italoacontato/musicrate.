@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="../assets/Ellipse 4.webp">
+
+    <title>Meu perfil | MusicRate</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="profile-page">
+
+    <main class="profile-container">
+
+        <!-- CABEÇALHO -->
+        <header class="profile-topbar">
+            <a href="../index.html" class="profile-logo">
+                MusicRate<span>.</span>
+            </a>
+
+            </div>
+            <a href="../index.html" class="profile-home-link">
+                <i class="bi bi-arrow-left"></i>
+                Voltar ao início
+            </a>
+
+        </header>
+
+
+        <!-- PERFIL DO USUÁRIO -->
+        <section class="profile-header">
+
+            <div class="profile-avatar-container">
+
+                <div class="profile-avatar" id="profile-avatar">
+                    U
+                </div>
+
+
+                <label for="avatar-input" class="avatar-upload-button" title="Alterar foto">
+                    <i class="bi bi-camera-fill"></i>
+                </label>
+
+                <input type="file" id="avatar-input" accept="image/png, image/jpeg, image/webp" hidden>
+
+            </div>
+            <div class="profile-header-info">
+                <span class="profile-eyebrow">MINHA CONTA</span>
+                <h1 id="profile-name">Carregando...</h1>
+                <p id="profile-username"></p>
+            </div>
+
+
+        </section>
+
+        <!-- INFORMAÇÕES DA CONTA -->
+        <section class="profile-information">
+
+            <div class="profile-section-heading">
+                <div>
+                    <span class="profile-eyebrow">DADOS PESSOAIS</span>
+                    <h2>Informações da conta</h2>
+                </div>
+                <i class="bi bi-person-vcard"></i>
+            </div>
+
+            <div class="profile-information-item">
+                <div class="profile-info-icon">
+                    <i class="bi bi-envelope"></i>
+                </div>
+
+                <div>
+                    <strong>E-mail</strong>
+                    <p id="profile-email"></p>
+                </div>
+            </div>
+
+            <p id="profile-message"></p>
+
+        </section>
+
+        <!-- ESTATÍSTICAS -->
+        <section class="profile-statistics">
+
+            <div class="profile-section-heading">
+                <div>
+                    <span class="profile-eyebrow">SEU DESEMPENHO</span>
+                    <h2>Minhas estatísticas</h2>
+                </div>
+                <i class="bi bi-bar-chart-line"></i>
+            </div>
+
+            <div class="statistics-cards">
+
+                <div class="statistics-card">
+                    <i class="bi bi-star"></i>
+                    <h3>Total de avaliações</h3>
+                    <p id="stat-total-ratings">0</p>
+                </div>
+
+                <div class="statistics-card">
+                    <i class="bi bi-graph-up"></i>
+                    <h3>Nota média</h3>
+                    <p id="stat-average-rating">0.0</p>
+                </div>
+
+                <div class="statistics-card">
+                    <i class="bi bi-disc"></i>
+                    <h3>Álbuns avaliados</h3>
+                    <p id="stat-albums-rated">0</p>
+                </div>
+
+                <div class="statistics-card">
+                    <i class="bi bi-music-note"></i>
+                    <h3>Músicas avaliadas</h3>
+                    <p id="stat-songs-rated">0</p>
+                </div>
+
+            </div>
+
+            <div class="statistics-chart">
+
+                <h3>Distribuição das minhas notas</h3>
+
+                <canvas id="ratings-chart"></canvas>
+
+            </div>
+
+        </section>
+
+        <!-- HISTÓRICO DE AVALIAÇÕES -->
+        <section class="profile-history">
+
+            <div class="profile-section-heading">
+                <div>
+                    <span class="profile-eyebrow">SUAS OPINIÕES</span>
+                    <h2>Meu histórico</h2>
+                </div>
+                <i class="bi bi-clock-history"></i>
+            </div>
+
+            <div id="rating-history">
+                <p>Carregando histórico...</p>
+            </div>
+
+        </section>
+
+        <!-- ÁLBUNS FAVORITOS -->
+        <section class="profile-favorites">
+
+            <div class="profile-section-heading">
+                <div>
+                    <span class="profile-eyebrow">SUA COLEÇÃO</span>
+                    <h2>Meus álbuns favoritos</h2>
+                </div>
+                <i class="bi bi-heart"></i>
+            </div>
+
+            <div id="favorite-albums">
+                <p>Carregando favoritos...</p>
+            </div>
+
+        </section>
+
+        <!-- MÚSICAS FAVORITAS -->
+        <section class="profile-favorites">
+
+            <div class="profile-section-heading">
+                <div>
+                    <span class="profile-eyebrow">SUA PLAYLIST</span>
+                    <h2>Minhas músicas favoritas</h2>
+                </div>
+                <i class="bi bi-music-note-beamed"></i>
+            </div>
+
+            <div id="favorite-songs">
+                <p>Carregando músicas favoritas...</p>
+            </div>
+
+        </section>
+
+        <!-- AÇÕES -->
+        <footer class="profile-footer">
+
+            <button id="logout-button" type="button">
+                <i class="bi bi-box-arrow-right"></i>
+                Sair da conta
+            </button>
+
+            <a href="../index.html">
+                Voltar para o início
+            </a>
+
+        </footer>
+
+
+        <!-- VISUALIZAR FOTO DE PERFIL -->
+        <div class="avatar-lightbox" id="avatar-lightbox">
+
+            <button type="button" class="avatar-lightbox-close" id="avatar-lightbox-close" aria-label="Fechar imagem">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <img id="avatar-lightbox-image" src="" alt="Foto de perfil ampliada">
+
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="../js/profile.js"></script>
+
+</body>
+
+</html>

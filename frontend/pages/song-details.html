@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="../assets/Ellipse 4.webp">
+
+    <title>Detalhes da música | MusicRate</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="header">
+        <div class="container header-content">
+
+            <a href="../index.html" class="logo">
+                MusicRate<span>.</span>
+            </a>
+
+            <nav class="navbar">
+                <a href="../index.html">Início</a>
+                <a href="explorar.html" class="active">Explorar</a>
+                <a href="rankings.html">Rankings</a>
+                 <a href="./comunidade.html">Comunidade</a>
+            </nav>
+
+            <div class="header-buttons">
+
+                <a href="pages/login.html" class="btn-login" id="login-link">
+                    Entrar
+                </a>
+
+                <a href="pages/cadastro.html" class="btn-register" id="register-link">
+                    Criar conta
+                </a>
+
+
+                <!-- NOTIFICAÇÕES -->
+
+                <div class="notification-menu" id="notification-menu">
+
+                    <button class="notification-toggle" id="notification-toggle" aria-label="Notificações"
+                        aria-expanded="false" type="button">
+
+                        <i class="bi bi-bell"></i>
+
+                        <span class="notification-count" id="notification-count" hidden>
+                            0
+                        </span>
+
+                    </button>
+
+                    <div class="notification-dropdown" id="notification-dropdown" hidden>
+
+                        <div class="notification-header">
+                            <h3>Notificações</h3>
+                        </div>
+
+                        <div class="notification-list" id="notification-list">
+
+                            <p class="notification-empty">
+                                Carregando notificações...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="profile-menu" id="profile-menu" hidden>
+
+                    <button class="profile-toggle" id="profile-toggle" aria-label="Abrir menu do usuário"
+                        aria-expanded="false">
+
+                        <i class="bi bi-person-fill"></i>
+
+                    </button>
+
+                    <div class="profile-dropdown" id="profile-dropdown" hidden>
+
+                        <a href="perfil.html">
+                            <i class="bi bi-person"></i>
+                            Perfil
+                        </a>
+
+                        <button id="logout-button">
+                            <i class="bi bi-box-arrow-right"></i>
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main class="album-page">
+
+        <div class="container">
+
+            <a href="explorar.html" class="back-link">
+                ← Voltar para exploração
+            </a>
+
+
+            <!-- INFORMAÇÕES DA MÚSICA -->
+
+            <section class="album-detail">
+
+                <div class="detail-cover" id="song-cover">
+                    <span>Carregando...</span>
+                </div>
+
+                <div class="detail-info">
+
+                    <span class="section-label">DETALHES DA MÚSICA</span>
+
+                    <h1 id="song-title">Carregando música...</h1>
+
+                    <p class="detail-artist" id="song-artist">
+                        Carregando artista...
+                    </p>
+
+                    <div class="detail-metadata">
+                        <span id="song-album">Carregando álbum...</span>
+                        <span>•</span>
+                        <span id="song-year">--</span>
+                        <span>•</span>
+                        <span id="song-duration">--:--</span>
+                    </div>
+
+                    <button type="button" id="favorite-button" class="favorite-button">
+                        ♡ Adicionar aos favoritos
+                    </button>
+
+                    <p id="favorite-message"></p>
+
+                    <div class="detail-rating">
+
+                        <div class="detail-score">
+                            <span>★</span>
+                            <strong id="song-average">0.0</strong>
+                            <small>/ 10</small>
+                        </div>
+
+                        <p id="song-rating-count">0 avaliações da comunidade</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FORMULÁRIO DE AVALIAÇÃO -->
+
+            <div class="rating-form">
+
+                <div class="rating-form-heading">
+                    <span class="section-label">SUA OPINIÃO</span>
+                    <h3>Avalie esta música</h3>
+                    <p>Compartilhe sua nota e conte o que achou desta música.</p>
+                </div>
+
+                <div class="rating-field">
+
+                    <label for="rating-value">Sua nota</label>
+
+                    <div class="rating-input-wrapper">
+                        <i class="bi bi-star-fill"></i>
+
+                        <input type="number" id="rating-value" min="0" max="10" step="0.5" placeholder="Ex.: 8.5">
+
+                        <span>/ 10</span>
+                    </div>
+
+                    <small>Escolha uma nota entre 0 e 10.</small>
+
+                </div>
+
+                <div class="rating-field">
+
+                    <label for="rating-review">Sua resenha</label>
+
+                    <textarea id="rating-review" placeholder="O que você achou desta música? Conte sua experiência..."
+                        rows="5" maxlength="1000"></textarea>
+
+                    <small>Máximo de 1000 caracteres.</small>
+
+                </div>
+
+                <button type="button" id="submit-rating" class="btn-primary">
+                    <i class="bi bi-send-fill"></i>
+                    Enviar avaliação
+                </button>
+
+                <p id="rating-message"></p>
+
+            </div>
+
+            <!-- AVALIAÇÕES DA COMUNIDADE -->
+
+            <section class="community-section">
+
+                <div class="detail-section-heading">
+                    <div>
+                        <span class="section-label">OPINIÃO DOS OUVINTES</span>
+                        <h2>Avaliações da comunidade</h2>
+                    </div>
+                </div>
+
+                <div class="community-reviews" id="community-reviews">
+                    <p>Carregando avaliações...</p>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 MusicRate. Feito para quem ama música.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/song-details.js"></script>
+    <script type="module" src="../js/auth.js"></script>
+    <script type="module" src="../js/notifications.js"></script>
+    <script type="module" src="../js/comunidade.js"></script>
+</body>
+
+</html>

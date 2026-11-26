@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="../assets/Ellipse 4.webp">
+
+    <title>Rankings | MusicRate</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="header">
+        <div class="container header-content">
+
+            <a href="../index.html" class="logo">
+                MusicRate<span>.</span>
+            </a>
+
+            <nav class="navbar">
+                <a href="../index.html">Início</a>
+                <a href="explorar.html">Explorar</a>
+                <a href="rankings.html" class="active">Rankings</a>
+                <a href="comunidade.html">Comunidade</a>
+            </nav>
+
+            <div class="header-buttons">
+
+                <a href="pages/login.html" class="btn-login" id="login-link">
+                    Entrar
+                </a>
+
+                <a href="pages/cadastro.html" class="btn-register" id="register-link">
+                    Criar conta
+                </a>
+
+
+                <!-- NOTIFICAÇÕES -->
+
+                <div class="notification-menu" id="notification-menu">
+
+                    <button class="notification-toggle" id="notification-toggle" aria-label="Notificações"
+                        aria-expanded="false" type="button">
+
+                        <i class="bi bi-bell"></i>
+
+                        <span class="notification-count" id="notification-count" hidden>
+                            0
+                        </span>
+
+                    </button>
+
+                    <div class="notification-dropdown" id="notification-dropdown" hidden>
+
+                        <div class="notification-header">
+                            <h3>Notificações</h3>
+                        </div>
+
+                        <div class="notification-list" id="notification-list">
+
+                            <p class="notification-empty">
+                                Carregando notificações...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-menu" id="profile-menu" hidden>
+
+                    <button class="profile-toggle" id="profile-toggle" aria-label="Abrir menu do usuário"
+                        aria-expanded="false">
+                        <i class="bi bi-person-fill"></i>
+                    </button>
+
+                    <div class="profile-dropdown" id="profile-dropdown" hidden>
+
+                        <a href="perfil.html">
+                            <i class="bi bi-person"></i> Perfil
+                        </a>
+
+                        <button id="logout-button">
+                            <i class="bi bi-box-arrow-right"></i> Sair
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main>
+
+        <section class="ranking-section">
+
+            <div class="container">
+
+                <!-- APRESENTAÇÃO -->
+
+                <div class="ranking-heading">
+
+                    <span class="section-label">DESTAQUES DA COMUNIDADE</span>
+
+                    <h1>Rankings MusicRate.</h1>
+
+                    <p>
+                        Descubra os álbuns e as músicas mais bem avaliados
+                        pela comunidade.
+                    </p>
+
+                </div>
+
+
+                <!-- RANKING DE ÁLBUNS -->
+
+                <section class="ranking-block">
+
+                    <div class="ranking-title">
+                        <h2>Álbuns mais bem avaliados</h2>
+
+                        <p>
+                            Os álbuns que conquistaram as melhores notas.
+                        </p>
+                    </div>
+
+                    <div id="album-ranking" class="ranking-grid">
+
+                        <p>Carregando ranking de álbuns...</p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- RANKING DE MÚSICAS -->
+
+                <section class="ranking-block">
+
+                    <div class="ranking-title">
+                        <h2>Músicas mais bem avaliadas</h2>
+
+                        <p>
+                            As músicas favoritas da comunidade.
+                        </p>
+                    </div>
+
+                    <div id="song-ranking" class="ranking-grid">
+
+                        <p>Carregando ranking de músicas...</p>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <p>© 2026 MusicRate. Feito para quem ama música.</p>
+
+        </div>
+
+    </footer>
+
+
+    <script type="module" src="../js/rankings.js"></script>
+    <script type="module" src="../js/auth.js"></script>
+    <script type="module" src="../js/notifications.js"></script>
+
+</body>
+
+</html>
